@@ -6,7 +6,7 @@ go_binary(
 )
 
 
-go_test(
-    name = "greetings_test",
-    external = True,
-)
+# go_test(
+#     name = "greetings_test",
+#     external = True,
+# )

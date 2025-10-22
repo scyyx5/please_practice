@@ -1,0 +1,125 @@
+Version 2.0.0
+-------------
+    * Release please_pex and wheel_resolver tools independently of each other
+
+Version 1.7.0
+-------------
+    * Upgrade coverage package in please_pex's bootstrap .pex to v7.10.7 (#243)
+      This adds native-speed tracing support for Python 3.14.
+    * Provide native-speed tracing when running under musl and free-threaded Python interpreters (#244)
+
+Version 1.6.2
+-------------
+    * Bootstrap libraries are correctly included in pexes (#233)
+
+Version 1.6.1
+-------------
+    * Fix exploding of zip-unsafe pexes (#231)
+
+Version 1.6.0
+-------------
+    * Import hooks are now added in the `plz` module and are hence more usefully importable (#229)
+
+Version 1.5.5
+-------------
+    * Fix get_code on ModuleDirImport (#226)
+
+Version 1.5.4
+-------------
+    * Handle packages with hyphenated names when loading distribution metadata (#224)
+
+Version 1.5.3
+-------------
+    * Updated some deprecated functions on import hooks (#222)
+
+Version 1.5.2
+-------------
+    * Performance improvements to please_pex (#219, #220)
+
+Version 1.5.1
+-------------
+    * Fix some cases of AttributeError turning up from importlib.metadata (#216)
+
+Version 1.5.0
+-------------
+    * Add native-speed coverage tracing support for ARM64 platforms in `python_test` (#209)
+    * Fix distribution file enumeration under Python >= 3.12 in please_pex meta path finder (#208)
+
+Version 1.4.2
+-------------
+    * Upgrade `coverage` package to 7.6.4 in please_pex's bootstrap pex (#197)
+      This drops native-speed tracing support for Python 3.8 and adds it for Python 3.13.
+    * Remove unnecessary six dependency in the unittest test runner dependency bundle (#199)
+    * Prevent Python >= 3.12 from emitting a `DeprecationWarning` when using `importlib.metadata`
+      on modules in pex files (#203)
+
+Version 1.4.1
+-------------
+    * Handle empty contexts in please_pex meta path finder (#184)
+
+Version 1.4.0
+-------------
+    * Drop support for Python < 3.8 in please_pex bootstrap code (#181)
+    * Remove stealth dependency on importlib-metadata in please_pex bootstrap code (#176)
+    * Allow loading of distribution metadata for unimported modules in please_pex meta path
+      finder (#178)
+    * Rebuild tools with Go 1.23.2 (#179)
+
+Version 1.3.5
+-------------
+    * please_pex is now a statically linked binary for better compatibility (#172)
+
+Version 1.3.4
+-------------
+    * No changes were made to please_pex in this release
+
+Version 1.3.3
+-------------
+    * No changes were made to please_pex in this release
+
+Version 1.3.2
+-------------
+    * Rebuild tools with Go 1.22.6 due to an incompatibility between Please and Go 1.23 (#160)
+
+Version 1.3.1
+-------------
+    * Rebuild tools with Go 1.23.0 (#157)
+
+Version 1.3.0
+-------------
+    * No changes were made to please_pex in this release
+
+Version 1.2.2
+-------------
+    * Always clean up exploded pex when exiting the Python entry point (#142)
+    * Upgrade coverage in bootstrap pex to 7.3.2 (#126)
+
+Version 1.2.1
+-------------
+    * Quieten warnings from ModuleDirImport / SoImport in newer Python versions
+
+Version 1.2.0
+-------------
+    * Upgrade importlib-metadata to 6.8.0 (#122) - note that this increases the
+      minimum Python version requirement for please_pex to 3.8
+
+Version 1.1.1
+-------------
+    * Add debug env variable to only start the debugger when set
+
+Version 1.1.0
+-------------
+    * Upgrade pytest to 7.2.2
+    * Ensure transitive dependencies are always present in test runners
+
+Version 1.0.0
+-------------
+    * Migrate old pex tool across from main please repo
+
+Version 0.1.1
+-------------
+    * Base the file name versions off this release not the main one
+
+Version 0.1.0
+-------------
+    * Initial release

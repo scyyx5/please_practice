@@ -1,0 +1,18 @@
+[
+  {
+    "ID": "github.com/example/module/src",
+    "Name": "main",
+    "PkgPath": "github.com/example/module/src",
+    "GoFiles": [
+      "src/main.go"
+    ],
+    "CompiledGoFiles": [
+      "src/main.go"
+    ],
+    "ExportFile": "src/_main#lib.a",
+    "Imports": {
+      "fmt": "fmt",
+      "github.com/example/module/src/greetings": "github.com/example/module/src/greetings"
+    }
+  }
+]

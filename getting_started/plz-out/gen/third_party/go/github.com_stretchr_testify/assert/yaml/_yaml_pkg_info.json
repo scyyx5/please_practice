@@ -1,0 +1,17 @@
+[
+  {
+    "ID": "github.com/stretchr/testify/assert/yaml",
+    "Name": "yaml",
+    "PkgPath": "github.com/stretchr/testify/assert/yaml",
+    "GoFiles": [
+      "third_party/go/github.com_stretchr_testify/assert/yaml/yaml_default.go"
+    ],
+    "CompiledGoFiles": [
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/yaml/yaml_default.go"
+    ],
+    "ExportFile": "third_party/go/github.com_stretchr_testify/yaml.a|pkg/linux_amd64/github.com/stretchr/testify/assert/yaml/yaml.a",
+    "Imports": {
+      "gopkg.in/yaml.v3": "gopkg.in/yaml.v3"
+    }
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "ID": "github.com/stretchr/testify/assert",
+    "Name": "assert",
+    "PkgPath": "github.com/stretchr/testify/assert",
+    "GoFiles": [
+      "third_party/go/github.com_stretchr_testify/assert/assertion_compare.go",
+      "third_party/go/github.com_stretchr_testify/assert/assertion_format.go",
+      "third_party/go/github.com_stretchr_testify/assert/assertion_forward.go",
+      "third_party/go/github.com_stretchr_testify/assert/assertion_order.go",
+      "third_party/go/github.com_stretchr_testify/assert/assertions.go",
+      "third_party/go/github.com_stretchr_testify/assert/doc.go",
+      "third_party/go/github.com_stretchr_testify/assert/errors.go",
+      "third_party/go/github.com_stretchr_testify/assert/forward_assertions.go",
+      "third_party/go/github.com_stretchr_testify/assert/http_assertions.go"
+    ],
+    "CompiledGoFiles": [
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/assertion_compare.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/assertion_format.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/assertion_forward.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/assertion_order.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/assertions.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/doc.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/errors.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/forward_assertions.go",
+      "pkg/linux_amd64/github.com/stretchr/testify/assert/http_assertions.go"
+    ],
+    "ExportFile": "third_party/go/github.com_stretchr_testify/assert.a|pkg/linux_amd64/github.com/stretchr/testify/assert/assert.a",
+    "Imports": {
+      "bufio": "bufio",
+      "bytes": "bytes",
+      "encoding/json": "encoding/json",
+      "errors": "errors",
+      "fmt": "fmt",
+      "github.com/davecgh/go-spew/spew": "github.com/davecgh/go-spew/spew",
+      "github.com/pmezard/go-difflib/difflib": "github.com/pmezard/go-difflib/difflib",
+      "github.com/stretchr/testify/assert/yaml": "github.com/stretchr/testify/assert/yaml",
+      "math": "math",
+      "net/http": "net/http",
+      "net/http/httptest": "net/http/httptest",
+      "net/url": "net/url",
+      "os": "os",
+      "reflect": "reflect",
+      "regexp": "regexp",
+      "runtime": "runtime",
+      "runtime/debug": "runtime/debug",
+      "strings": "strings",
+      "time": "time",
+      "unicode": "unicode",
+      "unicode/utf8": "unicode/utf8"
+    }
+  }
+]

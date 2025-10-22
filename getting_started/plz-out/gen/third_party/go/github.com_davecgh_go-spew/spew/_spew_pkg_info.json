@@ -1,0 +1,39 @@
+[
+  {
+    "ID": "github.com/davecgh/go-spew/spew",
+    "Name": "spew",
+    "PkgPath": "github.com/davecgh/go-spew/spew",
+    "GoFiles": [
+      "third_party/go/github.com_davecgh_go-spew/spew/bypass.go",
+      "third_party/go/github.com_davecgh_go-spew/spew/common.go",
+      "third_party/go/github.com_davecgh_go-spew/spew/config.go",
+      "third_party/go/github.com_davecgh_go-spew/spew/doc.go",
+      "third_party/go/github.com_davecgh_go-spew/spew/dump.go",
+      "third_party/go/github.com_davecgh_go-spew/spew/format.go",
+      "third_party/go/github.com_davecgh_go-spew/spew/spew.go"
+    ],
+    "CompiledGoFiles": [
+      "pkg/linux_amd64/github.com/davecgh/go-spew/spew/bypass.go",
+      "pkg/linux_amd64/github.com/davecgh/go-spew/spew/common.go",
+      "pkg/linux_amd64/github.com/davecgh/go-spew/spew/config.go",
+      "pkg/linux_amd64/github.com/davecgh/go-spew/spew/doc.go",
+      "pkg/linux_amd64/github.com/davecgh/go-spew/spew/dump.go",
+      "pkg/linux_amd64/github.com/davecgh/go-spew/spew/format.go",
+      "pkg/linux_amd64/github.com/davecgh/go-spew/spew/spew.go"
+    ],
+    "ExportFile": "third_party/go/github.com_davecgh_go-spew/spew.a|pkg/linux_amd64/github.com/davecgh/go-spew/spew/spew.a",
+    "Imports": {
+      "bytes": "bytes",
+      "encoding/hex": "encoding/hex",
+      "fmt": "fmt",
+      "io": "io",
+      "os": "os",
+      "reflect": "reflect",
+      "regexp": "regexp",
+      "sort": "sort",
+      "strconv": "strconv",
+      "strings": "strings",
+      "unsafe": "unsafe"
+    }
+  }
+]

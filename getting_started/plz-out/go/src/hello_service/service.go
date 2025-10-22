@@ -1,0 +1,1 @@
+/home/yx223/work_abroad_2025/codelab_study/getting_started/plz-out/gen/hello_service/service.go

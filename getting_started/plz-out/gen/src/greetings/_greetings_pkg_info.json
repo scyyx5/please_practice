@@ -1,0 +1,17 @@
+[
+  {
+    "ID": "github.com/example/module/src/greetings",
+    "Name": "greetings",
+    "PkgPath": "github.com/example/module/src/greetings",
+    "GoFiles": [
+      "src/greetings/greetings.go"
+    ],
+    "CompiledGoFiles": [
+      "src/greetings/greetings.go"
+    ],
+    "ExportFile": "src/greetings/greetings.a",
+    "Imports": {
+      "math/rand": "math/rand"
+    }
+  }
+]

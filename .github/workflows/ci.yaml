@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup your language of choice here:
+      # https://github.com/actions/?q=setup-&type=&language=
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Make sure it's added after the checkout step
+      - name: Set up Please
+        uses: sagikazarmark/setup-please-action@v0
+
+      # Run please build
+      # You can use plz thanks to the setup action
+      - name: Test
+        run: plz test //...

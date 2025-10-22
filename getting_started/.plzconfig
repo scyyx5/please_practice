@@ -1,0 +1,33 @@
+; Please config file
+; Leaving this file as is is enough to use plz to build your project.
+; Please will stay on whatever version you currently have until you run
+; 'plz update', when it will download the latest available version.
+;
+; Or you can uncomment the following to pin everyone to a particular version;
+; when you change it all users will automatically get updated.
+; [please]
+; version = 17.19.1
+
+[go]
+;gotool = ...
+;goroot - ...
+importpath = github.com/your/module
+
+[parse]
+preloadsubincludes = ///go//build_defs:go
+preloadsubincludes = ///shell//build_defs:shell
+preloadsubincludes = ///docker//build_defs:docker
+preloadsubincludes = ///k8s//build_defs:k8s
+
+[Plugin "go"]
+Target = //plugins:go
+GoTool = //third_party/go:toolchain|go
+
+[Plugin "shell"]
+Target = //plugins:shell
+
+[Plugin "docker"]
+Target = //plugins:docker
+
+[Plugin "k8s"]
+Target = //plugins:k8s

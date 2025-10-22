@@ -1,0 +1,1 @@
+/home/yx223/work_abroad_2025/codelab_study/get_started_go/plz-out/gen/third_party/go/_github.com_stretchr_testify_dl/MAINTAINERS.md

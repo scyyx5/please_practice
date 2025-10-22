@@ -1,0 +1,92 @@
+name: Golang rules
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: ./pleasew test -p -v notice --log_file plz-out/log/test.log
+      - name: Archive logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: plz-out/log
+  test_coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run tests with coverage
+        run: ./pleasew cover -p -v notice --nocoverage_report --log_file plz-out/log/test_coverage.log
+      - name: Archive logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage_logs
+          path: plz-out/log
+  test_tools:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run tests with separate Go tools
+        run: ./pleasew cover -p -v notice --nocoverage_report --log_file plz-out/log/test_tools.log
+      - name: Archive logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tools_logs
+          path: plz-out/log
+  test_debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build with debug configuration
+        run: ./pleasew build -c dbg -p -v notice --log_file plz-out/log/test_debug.log
+      - name: Archive logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug_logs
+          path: plz-out/log
+  release:
+    needs:
+      - test
+      - test_coverage
+      - test_tools
+      - test_debug
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build please_go
+        run: ./pleasew build //tools/please_go
+      - name: Build
+        run: ./pleasew build --profile release -o plugin.go.pleasegotool:$(pwd)/plz-out/bin/tools/please_go/please_go -p -v notice //package:please_go_release_files //package:driver_release_files
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: thought-machine/release-action@master
+      - name: Release tool
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: thought-machine/release-action@master
+        with:
+          version-file: tools/please_go/VERSION
+          change-log-file: tools/please_go/ChangeLog
+          release-prefix: please-go
+          release-files: plz-out/package/please_go
+      - name: Release package driver
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: thought-machine/release-action@master
+        with:
+          version-file: tools/driver/VERSION
+          change-log-file: tools/driver/ChangeLog
+          release-prefix: plz-gopackagesdriver
+          release-files: plz-out/package/driver

@@ -1,0 +1,21 @@
+[
+  {
+    "ID": "github.com/pmezard/go-difflib/difflib",
+    "Name": "difflib",
+    "PkgPath": "github.com/pmezard/go-difflib/difflib",
+    "GoFiles": [
+      "third_party/go/github.com_pmezard_go-difflib/difflib/difflib.go"
+    ],
+    "CompiledGoFiles": [
+      "pkg/linux_amd64/github.com/pmezard/go-difflib/difflib/difflib.go"
+    ],
+    "ExportFile": "third_party/go/github.com_pmezard_go-difflib/difflib.a|pkg/linux_amd64/github.com/pmezard/go-difflib/difflib/difflib.a",
+    "Imports": {
+      "bufio": "bufio",
+      "bytes": "bytes",
+      "fmt": "fmt",
+      "io": "io",
+      "strings": "strings"
+    }
+  }
+]

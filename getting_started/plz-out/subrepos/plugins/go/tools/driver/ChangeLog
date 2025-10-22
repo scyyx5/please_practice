@@ -1,0 +1,51 @@
+Version 0.6.0
+-------------
+    * Migrate to `go_repo` and upgrade golang.org/x packages (#316)
+
+Version 0.5.0
+-------------
+    * Build with Go 1.24.1
+
+Version 0.4.1
+-------------
+    * Support in-repo test mode for go_repo
+
+Version 0.4.0
+-------------
+    * Handle subrepos correctly for go_repo (#191)
+
+Version 0.3.1
+-------------
+    * Handle some additional cases for third-party packages
+    * Some additional flags for debugging
+
+Version 0.3.0
+-------------
+    * Add search dir option which walks a current directory rather than querying plz.
+      Allows running within a Please test.
+
+Version 0.2.3
+-------------
+    * Allow the caller not to provide any input files at all
+
+Version 0.2.2
+-------------
+    * Better handle the case of no input files
+    * Honour the 'tests' field on input request correctly.
+
+Version 0.2.1
+-------------
+    * `go_src` dependencies are now explicitly built, ensuring that e.g. code generated from
+      protobufs gets downloaded when using remote execution.
+
+Version 0.2.0
+-------------
+    * `plz build` output now appears on stderr if the terminal is interactive.
+
+Version 0.1.1
+-------------
+    * Change the release prefix to `plz-gopackagesdriver`.
+
+Version 0.1.0
+-------------
+    * Initial release of gopackagesdriver tool for Please.

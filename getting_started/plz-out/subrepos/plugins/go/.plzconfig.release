@@ -1,0 +1,2 @@
+[Plugin "go"]
+PleaseGoTool = //tools:please_go

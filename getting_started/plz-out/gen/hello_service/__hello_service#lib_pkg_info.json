@@ -1,0 +1,19 @@
+[
+  {
+    "ID": "hello_service",
+    "Name": "main",
+    "PkgPath": "hello_service",
+    "GoFiles": [
+      "hello_service/service.go"
+    ],
+    "CompiledGoFiles": [
+      "hello_service/service.go"
+    ],
+    "ExportFile": "hello_service/_hello_service#lib.a",
+    "Imports": {
+      "fmt": "fmt",
+      "log": "log",
+      "net/http": "net/http"
+    }
+  }
+]

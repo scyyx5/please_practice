@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="src.greetings.greetings_test.GreetingTest" tests="1" file="src/greetings/greetings_test.py" time="0.002" timestamp="2025-10-19T16:57:33" failures="0" errors="0" skipped="0">
+	<testcase classname="src.greetings.greetings_test.GreetingTest" name="test_greeting" time="0.002" timestamp="2025-10-19T16:57:33" file="greetings_test.pex/src/greetings/greetings_test.py" line="6"/>
+</testsuite>

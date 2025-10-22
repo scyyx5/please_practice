@@ -1,0 +1,15 @@
+Version 0.2.0
+-------------
+    * Use newer ARCAT_TOOL config option instead of JARCAT_TOOL
+
+Version 0.1.2
+-------------
+    * Add plugin definition
+
+Version 0.1.1
+-------------
+    *  Rename `builds_defs` directory to `build_defs` for consistency with other plugins
+
+Version 0.1.0
+-------------
+    *  Initial release

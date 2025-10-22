@@ -1,0 +1,8 @@
+<testsuites time="0.002">
+    <testsuite name="greetings_test" tests="1" package="src.greetings" time="0.002">
+        <properties>
+            <property name="cached" value="true"></property>
+        </properties>
+        <testcase name="test_greeting" classname="src.greetings.greetings_test.GreetingTest" time="0.002"></testcase>
+    </testsuite>
+</testsuites>

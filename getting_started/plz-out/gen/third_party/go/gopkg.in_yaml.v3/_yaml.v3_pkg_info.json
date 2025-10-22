@@ -1,0 +1,56 @@
+[
+  {
+    "ID": "gopkg.in/yaml.v3",
+    "Name": "yaml",
+    "PkgPath": "gopkg.in/yaml.v3",
+    "GoFiles": [
+      "third_party/go/gopkg.in_yaml.v3/apic.go",
+      "third_party/go/gopkg.in_yaml.v3/decode.go",
+      "third_party/go/gopkg.in_yaml.v3/emitterc.go",
+      "third_party/go/gopkg.in_yaml.v3/encode.go",
+      "third_party/go/gopkg.in_yaml.v3/parserc.go",
+      "third_party/go/gopkg.in_yaml.v3/readerc.go",
+      "third_party/go/gopkg.in_yaml.v3/resolve.go",
+      "third_party/go/gopkg.in_yaml.v3/scannerc.go",
+      "third_party/go/gopkg.in_yaml.v3/sorter.go",
+      "third_party/go/gopkg.in_yaml.v3/writerc.go",
+      "third_party/go/gopkg.in_yaml.v3/yaml.go",
+      "third_party/go/gopkg.in_yaml.v3/yamlh.go",
+      "third_party/go/gopkg.in_yaml.v3/yamlprivateh.go"
+    ],
+    "CompiledGoFiles": [
+      "pkg/linux_amd64/gopkg.in/yaml.v3/apic.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/decode.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/emitterc.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/encode.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/parserc.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/readerc.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/resolve.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/scannerc.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/sorter.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/writerc.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/yaml.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/yamlh.go",
+      "pkg/linux_amd64/gopkg.in/yaml.v3/yamlprivateh.go"
+    ],
+    "ExportFile": "third_party/go/gopkg.in_yaml.v3/yaml.v3.a|pkg/linux_amd64/gopkg.in/yaml.v3/yaml.v3.a",
+    "Imports": {
+      "bytes": "bytes",
+      "encoding": "encoding",
+      "encoding/base64": "encoding/base64",
+      "errors": "errors",
+      "fmt": "fmt",
+      "io": "io",
+      "math": "math",
+      "reflect": "reflect",
+      "regexp": "regexp",
+      "sort": "sort",
+      "strconv": "strconv",
+      "strings": "strings",
+      "sync": "sync",
+      "time": "time",
+      "unicode": "unicode",
+      "unicode/utf8": "unicode/utf8"
+    }
+  }
+]

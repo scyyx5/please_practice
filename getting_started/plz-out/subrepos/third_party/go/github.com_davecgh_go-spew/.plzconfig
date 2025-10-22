@@ -1,0 +1,3 @@
+[Plugin "go"]
+Target=@//plugins:go
+ImportPath=github.com/davecgh/go-spew

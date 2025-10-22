@@ -1,0 +1,150 @@
+[Please]
+Version = >=17.19.1
+
+[Build]
+hashcheckers = sha256
+
+[Plugin "go"]
+Target = //plugins:go
+ImportPath = github.com/please-build/python-rules
+gotool = //third_party/go:toolchain|go
+Stdlib = //third_party/go:std
+
+[Plugin "python"]
+DisableVendorFlags = true
+
+[Plugin "shell"]
+Target = //plugins:shell
+
+[Plugin "e2e"]
+Target = //plugins:e2e
+DefaultPlugin = //test:python-rules
+
+[PluginDefinition]
+name = python
+
+[PluginConfig "default_interpreter"]
+ConfigKey = DefaultInterpreter
+DefaultValue = python3
+Inherit = true
+Help = The Python interpreter to use for any case where one is not explicitly specified
+
+[PluginConfig "default_shebang"]
+Inherit = true
+Optional = true
+Help = The shebang to set on binaries / tests where one is not explicitly specified
+
+[PluginConfig "pex_tool"]
+ConfigKey = PexTool
+DefaultValue = //tools:please_pex
+Inherit = true
+Help = A path or build label for the pex tool, which is used to create .pex files from python sources
+
+[PluginConfig "interpreter_options"]
+ConfigKey = InterpreterOptions
+DefaultValue = ""
+Help = Any additional flags to pass to the python interpreter
+
+[PluginConfig "test_runner"]
+ConfigKey = TestRunner
+DefaultValue = unittest
+Help = The test runner to use e.g. unittest or pytest
+
+[PluginConfig "testrunner_deps"]
+ConfigKey = TestrunnerDeps
+DefaultValue = //third_party/python:unittest_bootstrap
+Help = A label for a build target containting the dependencies of the test runner
+
+[PluginConfig "test_runner_bootstrap"]
+ConfigKey = TestrunnerBootstrap
+DefaultValue = ""
+
+[PluginConfig "debugger"]
+ConfigKey = Debugger
+DefaultValue = pdb
+Inherit = true
+Help = The debugger to use when debugging python binaries
+
+[PluginConfig "module_dir"]
+ConfigKey = ModuleDir
+DefaultValue = third_party.python
+Help = The path to the third party python directory, in python import path format e.g. third_party.py3 for //third_party/py3
+
+[PluginConfig "pip_tool"]
+ConfigKey = PipTool
+DefaultValue = ""
+Optional = true
+Inherit = true
+Help = The tool to use for pip. Defaults to using python -m pip
+
+[PluginConfig "default_pip_repo"]
+ConfigKey = DefaultPipRepo
+DefaultValue = ""
+Optional = true
+Help = The default repository to look for pip dependencies in
+
+[PluginConfig "use_pypi"]
+ConfigKey = UsePypi
+DefaultValue = true
+Type = bool
+Help = Whether to use PyPi as a repository for python_wheel
+
+[PluginConfig "pip_flags"]
+ConfigKey = PipFlags
+DefaultValue = ""
+Optional = true
+Help = Any additional flags to pass to pip
+
+[PluginConfig "disable_vendor_flags"]
+ConfigKey = DisableVendorFlags
+DefaultValue = false
+Inherit = true
+Type = bool
+Help = Disables any vendor specific flags e.g. the --system flag passed to debians fork of pip
+
+[PluginConfig "pip_compile_flags"]
+ConfigKey = PipCompileFlags
+DefaultValue = ""
+Optional = true
+Inherit = true
+Help = Flags to pass to pip when compiling
+
+[PluginConfig "wheel_repo"]
+ConfigKey = WheelRepo
+Optional = true
+Help = The root URL for the wheel repo
+
+[PluginConfig "wheel_name_scheme"]
+ConfigKey = WheelNameScheme
+Optional = true
+Repeatable = true
+Help = A format string for the wheel repo URL. Format fields url_base, package_name, initial, and version. Initial is the first character of the package name.
+
+[PluginConfig "wheel_tool"]
+ConfigKey = WheelTool
+Optional = true
+Inherit = true
+Help = The tool used to resolve wheels with using the pypi API.
+
+[PluginConfig "prereleases"]
+DefaultValue = false
+Type = bool
+Help = Allow prereleased versions in python_wheel targets
+
+[PluginConfig "require_licences"]
+DefaultValue = false
+Type = bool
+Inherit = true
+Help = If set, the licences field on pip_library and python_wheel will be mandatory
+
+[PluginConfig "verbosity"]
+DefaultValue = "info"
+Help = Passes verbosity level to wheel_tool, for example: wheel_tool --verbosity info
+Optional = true
+
+[PluginConfig "feature_flags"]
+DefaultValue = ""
+Repeatable = true
+Optional = true
+Inherit = true
+Help = Flags to enable in-development features, or toggle breaking changes

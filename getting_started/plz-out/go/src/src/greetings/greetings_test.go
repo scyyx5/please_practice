@@ -1,0 +1,1 @@
+/home/yx223/work_abroad_2025/codelab_study/get_started_go/plz-out/gen/src/greetings/greetings_test.go

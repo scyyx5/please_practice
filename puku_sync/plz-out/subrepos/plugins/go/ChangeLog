@@ -1,0 +1,444 @@
+Version 1.28.0
+--------------
+    * Setting the `external` parameter to True in `go_test` and `go_benchmark` targets now also adds
+      'external' to the labels (#328)
+
+Version 1.27.0
+--------------
+    * Use `please_go` v1.21.0 built with Go `1.25.2` and `golang.org/x/mod@v0.29.0` to allow for
+      `ignore` directives in `go.mod` files (#325)
+
+Version 1.26.0
+--------------
+    * Remove covdata entrypoint in go_toolchain for versions above 1.25 (#323)
+
+Version 1.25.0
+--------------
+    * Enable `go_library` to compile packages containing large numbers of files (#320)
+
+Version 1.24.0
+--------------
+    * Update please_go to a version built with Go 1.24
+
+Version 1.23.0
+--------------
+    * Switch to using `go tool covdata` to generate test coverage reports
+    * Added new config flag, `go_covdata_tool`, to specify the covdata tool
+
+Version 1.22.0
+--------------
+    * Plumb cc_hdrs provide though cgo_library (#307)
+
+Version 1.21.5
+--------------
+    * Race config property is inherited so it works on binaries from `go_repo` (#302)
+
+Version 1.21.4
+--------------
+    * Suppress Go 1.23 emitting GOCOVERDIR messages
+
+Version 1.21.3
+--------------
+    * Support Go 1.23 coverage (#294)
+
+Version 1.21.2
+--------------
+    * Minor simplifications to cgo rules (#285)
+
+Version 1.21.1
+--------------
+    * Bump minimum Please version to v17.10.1 to fix a bug blocking the go-rules release workflow
+      (#282)
+
+Version 1.21.0
+--------------
+    * Add `strip_binaries` configuration option (#280)
+
+Version 1.20.1
+--------------
+    * When building Go code with `go_toolchain`, use the Go headers provided by that toolchain to
+      compile ASM files/headers and the ABI symbol file (#276)
+
+Version 1.20.0
+--------------
+    * Convert `cgo_enabled` plugin config field into a boolean (#274). This should not be a breaking
+      change for the vast majority of users - the only case in which a change is needed to the value
+      of `cgo_enabled` after upgrading to v1.20.0 is if it is set to an esoteric value that Please
+      does not already interpret as a boolean in a plugin configuration (i.e. something other than
+      `1`, `0`, `true`, `false`, `on`, or `off`).
+
+Version 1.19.0
+--------------
+    * Add `labels` parameter to the `go_toolchain`, `go_system_toolchain` and `go_stdlib` rules (#272)
+
+Version 1.18.1
+--------------
+    * Filter out empty lines from files being added in `cgo_library`
+
+Version 1.18.0
+--------------
+    * Propagate labels from `go_repo` targets to targets within the subrepo
+
+Version 1.17.5
+--------------
+    * Support using Golang release candidates when `install_std` is set explicitly
+
+Version 1.17.4
+--------------
+    * Prevent modfile from being exposed to downstream actions
+
+Version 1.17.3
+--------------
+    * Don't install stdlib for other architectures if install_std=False
+
+Version 1.17.2
+--------------
+    * Coverage redesign flag is now inherited by subrepos
+
+Version 1.17.1
+--------------
+    * Fixed separate tools for `plz cover` invocations (#255)
+
+Version 1.17.0
+--------------
+    * Added go_compile_tool and go_link_tool options to bypass `go tool` invocations (#254)
+
+Version 1.16.10
+---------------
+    * Upgrade please_go to support vendor paths correctly in stdlib & strip some paths (#250 & #251)
+
+Version 1.16.9
+--------------
+    * Upgrade please_go to support newer go mod directives (#245)
+
+Version 1.16.8
+--------------
+    * Support Go 1.22 pass path flag when generating symabis (#239)
+
+Version 1.16.7
+--------------
+    * Add labels argument to go_repo definition (#237)
+
+Version 1.16.6
+--------------
+    * Permit `data` parameter to `go_binary` to be a dict (#235)
+
+Version 1.16.5
+--------------
+    * Support Go 1.22 for third-party packages containing assembly in go_module (#227)
+    * ldflag ordering is now maintained for third-party cgo packages (#231)
+
+Version 1.16.4
+--------------
+    * Support Go 1.22 for third-party packages containing assembly
+
+Version 1.16.3
+--------------
+    * Use version 1.10.2 of please_go tool
+
+Version 1.16.2
+--------------
+    * Use version 1.10.0 of please_go tool
+
+Version 1.16.1
+--------------
+    * strip argument to go_binary now behaves as expected in cover profile (#224)
+
+Version 1.16.0
+--------------
+    * go_binary now takes a strip argument to control symbol stripping (#223)
+
+Version 1.15.3
+--------------
+    * Pass module coordinates into package info (#221)
+
+Version 1.15.2
+--------------
+    * Package driver now works when running within a test for `go_repo` (#219)
+
+Version 1.15.1
+--------------
+    * Fix cgo_library for package driver info generation
+
+Version 1.15.0
+--------------
+    * Generate correct subrepo info for package driver (#191)
+
+Version 1.14.2
+--------------
+    * go_repo: fix issues with compiling cgo where symbols defined in C files
+      would be missing during linking (#213)
+
+Version 1.14.1
+--------------
+    * Provide the package info from `go_library()` the same way we do for
+      `go_module()` (#209)
+
+Version 1.14.0
+--------------
+    * please_go upgraded to write build tags to subrepo plz config (#207)
+    * go_toolchain, go_system_toolchain, go_stdlib and go_repo all take
+    build_tags argument but default to the go config values. (#207)
+
+Version 1.13.2
+--------------
+    * go_repo now sets cover to false only on go_library (#205)
+
+Version 1.13.1
+--------------
+    * go_repo now sets cover to false (#203)
+
+Version 1.13.0
+--------------
+    * Add strip argument to go_repo (#195)
+    * Add config option to set Go build tags (#199)
+
+Version 1.12.1
+--------------
+    * New version of please_go tool now available
+
+Version 1.12.0
+--------------
+    * go_repo now attaches go_module labels for consumers who made use of them on go_module
+
+Version 1.11.5
+--------------
+    * go_mod_download directory hash replaced (#187)
+
+Version 1.11.4
+--------------
+    * Fixes some issues around cross compiling with `go_repo` where we would
+      generate invalid build labels (#185)
+    * Avoid adding binary targets to the install list of `go_repo` (#184)
+
+
+Version 1.11.3
+--------------
+    * Add _module argument to cgo_library (#180)
+
+Version 1.11.2
+--------------
+    * Use correct version of the please_go tool
+
+Version 1.11.1
+--------------
+    * Fix issue with the go package driver for packages from `go_repo()` targets
+
+Version 1.11.0
+--------------
+    * Add `ValidateModuleVersion` plugin option, which ensures that module
+      paths and versions given to `go_mod_download` comply with Go's module
+      version numbering policy (#171). This option is disabled by default,
+      but will become enabled by default in a future major version of the
+      plugin.
+
+Version 1.10.0
+--------------
+    * Allow go_repo to depend on go_module rules to enable an incremental migration (#166)
+
+Version 1.9.2
+-------------
+    * Fix issue with setting _module on go_binary rules within go_repo
+
+
+Version 1.9.1
+-------------
+    * Support :all syntax correctly when embedding (#161)
+    * Minor dependency fix to 1.9.0
+
+Version 1.9.0
+-------------
+    * Fix: don't check toolchain version when a version isn't provided (#154)
+    * `go_repo` now provides module info so `go version -m` works as expected (#158)
+    * Go module info build actions are now more efficient with their inputs (#157)
+
+Version 1.8.2
+-------------
+    * Remove implicit dependency on GCC toolchain when running under coverage profile (#155)
+
+Version 1.8.1
+-------------
+    * Add a config option to allow toggling pkg info generation (#150)
+
+Version 1.8.0
+-------------
+    * Added `pgo_file` argument to `go_library` which enables profile-guided optimisation.
+
+Version 1.7.6
+-------------
+    * Honour `flags` argument correctly to `go_test`
+
+Version 1.7.5
+-------------
+    * Fix issue with missing test results when tests call `os.Exit()` when using go 1.20+. This only
+      caused the report to miss rows, as the test result file wasn't being flushed, but would never
+      cause the test to pass when it should have failed. (#142)
+
+Version 1.7.4
+-------------
+    * Fix issues with with tests using TestMain in go1.20+ where we would run the tests
+      for them. This is the responsibility of TestMain.
+    * Set GOROOT when compiling stdlib as we need this for setting `pkg/include` for cgo/asm (#138)
+
+Version 1.7.3
+-------------
+    * Refactor `please_go` download test to avoid subrepo references (#136)
+      This fixes fatal errors with `plz query graph` in repos that use go-rules, a regression
+      present since version 1.7.0.
+
+Version 1.7.2
+------------
+    * Use correct version of the go tool (#128)
+    * Write `asm.h` to the tmp dir rather than the goroot (#125)
+
+Version 1.7.1
+------------
+    * Added missing `resources` option to `go_benchmark` (#121)
+    * Make modinfo require go (#123)
+
+Version 1.7.0
+------------
+    * Add `ModFile` config option which when set will resolve all `go_repo()` targets against the
+      modules in this file. This doesn't do a huge amount but will avoid situations where you had
+      to previously pass in modules through the `requirements` arg to `go_repo()` (#118)
+    * Pass in the generated `go_asm.h` file when compiling asm sources with `go_library()` (#116)
+
+Version 1.6.0
+------------
+    * Rename `go_get` to `go_repo` and make it generally available (#102)
+
+Version 1.5.0
+-------------
+    * Added support for compiling the Go stdlib in-repo independent of `go_toolchain`, via
+      `stdlib` config argument and `go_stdlib` rule (#93).
+    * Added support for Go build modes (which require the use of `go_stdlib` to compile correctly) (#93)
+
+Version 1.4.1
+-------------
+    * Fix issue with missing stderr on test output when not using the new coverage redesign feature flag
+
+Version 1.4.0
+-------------
+    * Improve support for case sensitive module names (#86)
+    * Handle large source directories by passing srcs as file (#90)
+    * Add an install argument to the beta `go_get()` rules to make them work more like `go_module()` (#87)
+
+Version 1.3.0
+-------------
+    * Support for Go 1.20's coverage redesign (#84)
+    * Added `go_system_toolchain` for adding a build of a toolchain off the local system
+      (useful for 1.20 on a system where one cannot be downloaded, notably Alpine Linux) (#85)
+
+Version 1.2.1
+-------------
+    * Go package info now gets written for the main package of a go_binary
+
+Version 1.2.0
+-------------
+    * Support for Go 1.20 (#75)
+
+Version 1.1.4
+-------------
+    * Don't generate Go package info targets when not generating import config
+
+Version 1.1.3
+-------------
+    * Remove hashes test as the arch subrepo labels break things
+
+Version 1.1.2
+-------------
+    * Fix some issues with package info generation when go sources are in a subdirectory
+
+Version 1.1.1
+-------------
+    * Use sha256 only for hashes
+
+Version 1.1.0
+-------------
+    * Add `go_get()`, a subrepo based approach to third party code #49
+    * Add a package driver to the releases. This can be used to help tools
+      integrate with Please projects. This can be set via GOPACKAGESDRIVER
+      env var and is used by a number of tools in the wild, include gopls
+      and various linters.
+    * Backport a fix to the cgo code generation to include compiler flags,
+      and package configuration #64
+
+Version 1.0.0
+-------------
+    * Separate the CGO rules and use the C plugin instead of built in
+      rules #27
+
+Version 0.5.1
+-------------
+    * Fix the CGO config options in the go_toolchain() rule #44
+    * Fix the compiler flags on the cgo rules #43
+    * Trim path when cross-compiling the toolchain #40
+
+Version 0.5.0
+-------------
+    * Add `env` to `go_test`, allowing specifying extra env vars.
+
+Version 0.4.4
+-------------
+    * Remove additional 'test' labels on libraries.
+
+Version 0.4.3
+-------------
+    * Expose go_binary sources when included as a go_test dependency (#35)
+    * Fix `go_library` for 1.19 to include package name when compiling.
+
+Version 0.4.2
+-------------
+    * Fix assembly for go_library for Go 1.19
+
+Version 0.4.1
+-------------
+    * Fix assembly for Go 1.19 (#33)
+
+Version 0.4.0
+-------------
+    * Add config option to make licences mandatory (#25)
+    * Add basic split debug info support (#26)
+    * Fix embedding directories by name (#28)
+
+Version 0.3.2
+-------------
+    * Update to use new version of the tools which handles no tests #24
+
+Version 0.3.1
+-------------
+    * Handle when test targets have no tests #20
+
+Version 0.3.0
+-------------
+    * Add config option to allow legacy imports #18
+
+Version 0.2.4
+-------------
+    * Use the `please-go-vx.x.x` release tags for the tools
+
+Version 0.2.3
+-------------
+    * Import the test version of internal packages when calculating
+      coverage
+
+Version 0.2.2
+-------------
+    * Handle hyphens in source file names when generating cover vars
+
+Version 0.2.1
+-------------
+    * Make the tool as binary
+
+Version 0.2.0
+-------------
+    * Improve the way we handle discovering coverage variables #7
+    * Remove usage of the legacy external flag
+
+Version 0.1.1
+-------------
+    *  Merge the please tools into please_go #3
+
+Version 0.1.0
+-------------
+    *  Initial release

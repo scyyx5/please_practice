@@ -1,0 +1,18 @@
+[
+  {
+    "ID": "src/hello",
+    "Name": "main",
+    "PkgPath": "src/hello",
+    "GoFiles": [
+      "src/hello/hello.go"
+    ],
+    "CompiledGoFiles": [
+      "src/hello/hello.go"
+    ],
+    "ExportFile": "src/hello/_hello#lib.a",
+    "Imports": {
+      "fmt": "fmt",
+      "github.com/google/uuid": "github.com/google/uuid"
+    }
+  }
+]

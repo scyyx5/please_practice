@@ -1,0 +1,57 @@
+[
+  {
+    "ID": "github.com/google/uuid",
+    "Name": "uuid",
+    "PkgPath": "github.com/google/uuid",
+    "GoFiles": [
+      "third_party/go/github.com_google_uuid/dce.go",
+      "third_party/go/github.com_google_uuid/doc.go",
+      "third_party/go/github.com_google_uuid/hash.go",
+      "third_party/go/github.com_google_uuid/marshal.go",
+      "third_party/go/github.com_google_uuid/node.go",
+      "third_party/go/github.com_google_uuid/node_net.go",
+      "third_party/go/github.com_google_uuid/null.go",
+      "third_party/go/github.com_google_uuid/sql.go",
+      "third_party/go/github.com_google_uuid/time.go",
+      "third_party/go/github.com_google_uuid/util.go",
+      "third_party/go/github.com_google_uuid/uuid.go",
+      "third_party/go/github.com_google_uuid/version1.go",
+      "third_party/go/github.com_google_uuid/version4.go"
+    ],
+    "CompiledGoFiles": [
+      "pkg/darwin_arm64/github.com/google/uuid/dce.go",
+      "pkg/darwin_arm64/github.com/google/uuid/doc.go",
+      "pkg/darwin_arm64/github.com/google/uuid/hash.go",
+      "pkg/darwin_arm64/github.com/google/uuid/marshal.go",
+      "pkg/darwin_arm64/github.com/google/uuid/node.go",
+      "pkg/darwin_arm64/github.com/google/uuid/node_net.go",
+      "pkg/darwin_arm64/github.com/google/uuid/null.go",
+      "pkg/darwin_arm64/github.com/google/uuid/sql.go",
+      "pkg/darwin_arm64/github.com/google/uuid/time.go",
+      "pkg/darwin_arm64/github.com/google/uuid/util.go",
+      "pkg/darwin_arm64/github.com/google/uuid/uuid.go",
+      "pkg/darwin_arm64/github.com/google/uuid/version1.go",
+      "pkg/darwin_arm64/github.com/google/uuid/version4.go"
+    ],
+    "ExportFile": "third_party/go/github.com_google_uuid/uuid.a|pkg/darwin_arm64/github.com/google/uuid/uuid.a",
+    "Imports": {
+      "bytes": "bytes",
+      "crypto/md5": "crypto/md5",
+      "crypto/rand": "crypto/rand",
+      "crypto/sha1": "crypto/sha1",
+      "database/sql/driver": "database/sql/driver",
+      "encoding/binary": "encoding/binary",
+      "encoding/hex": "encoding/hex",
+      "encoding/json": "encoding/json",
+      "errors": "errors",
+      "fmt": "fmt",
+      "hash": "hash",
+      "io": "io",
+      "net": "net",
+      "os": "os",
+      "strings": "strings",
+      "sync": "sync",
+      "time": "time"
+    }
+  }
+]
